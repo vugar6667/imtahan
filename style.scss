@@ -1,0 +1,213 @@
+@import "navbar";
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat',sans-serif ;
+}
+
+//hero section//
+.hero{
+    background-color: #451314;
+    
+
+    &__container{
+        background-image: url('/assets/2qiz.avif');
+
+        color: #D9DADB;
+        height: 90vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-items:center ;
+        margin: 0 auto;
+        z-index: 1;
+        width:100% ;
+        max-width:1200px ;
+        padding-right:24px ;
+        padding-left: 24px;
+
+        @include tablet {
+            grid-template-columns:1fr ;
+            height: 100%;
+        }
+        &--left {
+         width: 100%;   
+         line-height: 1.2;
+
+         @include tablet {
+            padding: 5rem 0;
+         }
+         @include mobile {
+            line-height:1.5 ;
+         }
+        }
+        &--left h1 {
+            font-size: 4rem;
+            color:white;
+
+            @include mobile {
+                font-size:1.5rem ;
+            }
+        }
+
+        &--btn {
+            font-size: 1rem;
+            background-color: white ;
+            padding: 14px 32px;
+            border: none;
+            border-radius:4px ;
+            color: rgb(255, 255, 255);
+            margin-top: 2rem;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s;
+            outline: none;
+        }
+        &--btn a {
+            position: relative;
+            z-index: 2;
+            color: black;
+            text-decoration: none;
+        }
+        &--btn::after{
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: #451314;
+            color: white;
+            transition:all 0.3s ;
+            border-radius:4px ;
+        }
+        &--btn:hover::after{
+            width: 100%;
+            
+        }
+        &--right{
+            text-align: center;
+        }
+    }
+}
+
+.congrid {
+    width: 100%;
+    height: auto;
+    margin: 15px auto;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    
+    
+
+    .kutu1 {
+        background-color: #fff;
+        color: black;
+        flex: 1 1 calc(33.333% - 10px); 
+        max-width: calc(33.333% - 10px); 
+        padding: 0 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column; 
+         gap: 10px;
+        h1,
+        p,
+        button {
+            margin: 0;
+        }
+
+        img {
+            flex: 1 1 auto;
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.1); // Üzerine gelindiğinde biraz büyü
+            }
+        }
+    }
+}
+
+
+.gallery-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  
+    .gallery-item {
+      width: calc(50% - 10px);
+      display: flex;
+      flex-direction: column;
+  
+      img {
+        width: 100%;
+        height: auto;
+      }
+  
+      .content {
+        padding: 10px;
+  
+        h2, p, button {
+          margin: 5px 0;
+        }
+        .btnn{
+            background-color: black;
+            color: #fff;
+            padding: 5px;
+        }
+      }
+    }
+  }
+
+
+  .background-section {
+    background-image: url('/assets/2_girl_background.webp');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 20px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  
+    .content {
+      margin-top: auto;
+      h1 {
+        margin-bottom: 100px;
+      }
+      .big-heading {
+        font-size: 3em;
+        line-height: 1.2;
+      }
+      form {
+        margin: 10px 0;
+        display: flex;
+        flex-direction: column;
+  
+        input[type="email"] {
+          margin-bottom: 10px;
+          padding: 5px;
+        }
+  
+        button {
+          padding: 5px 10px;
+          background-color: #fff;
+          color: #333;
+          border: none;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+  
+          &:hover {
+            background-color: #ddd;
+          }
+        }
+      }
+    }
+  }
